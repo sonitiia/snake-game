@@ -1,0 +1,6 @@
+.user-wrapper {
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+	font-size: 20px;
+}

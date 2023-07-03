@@ -1,0 +1,104 @@
+.canvas-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+canvas {
+	background-color: black;
+	position: relative;
+	z-index: -1;
+	border-right: 1px solid orange;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	width: fit-content;
+	padding: 30px;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+}
+
+.game-over {
+	color: white;
+	font-size: 50px;
+}
+
+input,
+button {
+	padding: 12px 20px;
+	border-radius: 12px;
+	border: none;
+	color: white;
+	background-color: black;
+	font-size: 20px;
+}
+
+input:focus {
+	outline: none;
+}
+
+input::placeholder {
+	color: orange;
+}
+
+.incorrect-input-message {
+	color: red;
+	align-self: start;
+	padding: 0 20px 10px;
+}
+
+.playGameButton {
+	background-color: transparent;
+	font-size: 30px;
+	cursor: pointer;
+	background-image: linear-gradient(90deg, orange 50%, transparent 50%),
+		linear-gradient(90deg, orange 50%, transparent 50%),
+		linear-gradient(0deg, orange 50%, transparent 50%),
+		linear-gradient(0deg, orange 50%, transparent 50%);
+	background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+	background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
+	background-position: left top, right bottom, left bottom, right top;
+	animation: border-dance 1s infinite linear;
+}
+
+@keyframes border-dance {
+	0% {
+		background-position: left top, right bottom, left bottom, right top;
+	}
+	100% {
+		background-position: left 15px top, right 15px bottom, left bottom 15px,
+			right top 15px;
+	}
+}
+
+.pauseGameButton {
+	position: absolute;
+	top: 0;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: orange;
+	backdrop-filter: blur(10px);
+	padding: 30px;
+	border-radius: 14px;
+}
+
+.current-score {
+	position: absolute;
+	z-index: 9;
+	width: fit-content;
+	padding: 30px;
+	border-radius: 14px;
+	background-color: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	color: white;
+	font-size: 20px;
+	top: 0;
+	left: 0;
+}
